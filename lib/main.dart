@@ -22,7 +22,9 @@ class MyApp extends StatelessWidget {
       routes: {
         '/login': (context) => const LoginPage(title: 'Flutter Form'),
         '/home': (context) => const HomePage(userName: ''),
-        '/schedule': (context) => const SchedulePage(group: '',),
+        '/schedule': (context) => const SchedulePage(
+              group: '',
+            ),
       },
       home: const LoginPage(title: 'Flutter Authorization'),
     );
