@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import './LoginPage.dart';
-import './HomePage.dart';
+import 'pages/SchedulePage.dart';
+import 'pages/LoginPage.dart';
+import 'pages/HomePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +21,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/login',
       routes: {
         '/login': (context) => const LoginPage(title: 'Flutter Form'),
+        '/home': (context) => const HomePage(userName: ''),
+        '/schedule': (context) => const SchedulePage(group: '',),
       },
       home: const LoginPage(title: 'Flutter Authorization'),
     );

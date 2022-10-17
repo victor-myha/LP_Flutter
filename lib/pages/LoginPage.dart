@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import './HomePage.dart';
+import 'HomePage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key, required this.title}) : super(key: key);
@@ -23,7 +23,6 @@ class _LoginPageState extends State<LoginPage> {
       final String _fieldText = fieldText!;
       final String _regex = regex!;
 
-
       return Column(children: [
         SizedBox(height: _height * 0.05),
         TextFormField(
@@ -36,8 +35,8 @@ class _LoginPageState extends State<LoginPage> {
             }
             return null;
           },
-          onChanged: (str){
-            if(fieldText == 'Username') {
+          onChanged: (str) {
+            if (fieldText == 'Username') {
               userNameText = str;
             }
           },
@@ -73,8 +72,9 @@ class _LoginPageState extends State<LoginPage> {
                         if (_formKey.currentState!.validate()) {
                           Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) =>  HomePage(userName: userNameText))
-                        );
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      HomePage(userName: userNameText)));
                         }
                       },
                       child: const Text("Authorize")),
