@@ -3,8 +3,9 @@ import '../models.dart';
 
 class SchedulePage extends StatefulWidget {
   final String group;
+  final String userName;
 
-  const SchedulePage({Key? key, required this.group}) : super(key: key);
+  const SchedulePage({Key? key, required this.group, required this.userName}) : super(key: key);
 
   @override
   State<SchedulePage> createState() => _SchedulePageState();
@@ -62,7 +63,7 @@ class _SchedulePageState extends State<SchedulePage> {
         ),
         body: Scaffold(
           appBar: AppBar(
-            title: Text('${widget.group} Schedule'),
+            title: Text('${widget.group} Schedule ${widget.userName}'),
             centerTitle: true,
             backgroundColor: Colors.green,
           ),

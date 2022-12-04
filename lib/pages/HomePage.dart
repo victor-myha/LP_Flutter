@@ -30,8 +30,8 @@ class _HomePageState extends State<HomePage> {
           onPressed: () => Navigator.of(context).pop(),
         ),
         body: Row(
-          children: const [
-            DropdownButtonExample(),
+          children:  [
+            DropdownButtonExample(userName: widget.userName),
           ],
         ));
   }
@@ -40,7 +40,10 @@ class _HomePageState extends State<HomePage> {
 const List<String> groupList = <String>['KI-41', 'KI-42', 'KI-43', 'KI-44'];
 
 class DropdownButtonExample extends StatefulWidget {
-  const DropdownButtonExample({super.key});
+  final String userName;
+
+  const DropdownButtonExample({Key? key, required this.userName}) : super(key: key);
+
 
   @override
   State<DropdownButtonExample> createState() => _DropdownButtonExampleState();
@@ -67,7 +70,7 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
         });
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => SchedulePage(group: value!)),
+          MaterialPageRoute(builder: (context) => SchedulePage(group: value!, userName: widget.userName,)),
         );
       },
       items: groupList.map<DropdownMenuItem<String>>((String value) {
