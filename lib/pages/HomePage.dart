@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:lp_flutter/pages/AirportsPage.dart';
 import 'SchedulePage.dart';
 
 class HomePage extends StatefulWidget {
@@ -29,9 +30,22 @@ class _HomePageState extends State<HomePage> {
           child: const Icon(Icons.arrow_back),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        body: Row(
+        body: Column(
           children:  [
             DropdownButtonExample(userName: widget.userName),
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: const TextStyle(fontSize: 20),
+              ),
+              onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const AirportsPage()));
+              },
+              child: const Text('Airports'),
+            ),
           ],
         ));
   }
